@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>language experiment</title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="mmturkey.0.5.js"></script> 
+<script type="text/javascript" src="basic10.js"></script>
+<link rel="stylesheet" href="basic.css"></link>
+</head>
+<body>
+
+<div class='slide' id='intro'>
+<br>
+    <p>Welcome! </p>
+<br>
+    <p>By participating in this experiment you will help us understand how human language works!</p>
+<p>You will read 16 short sets of sentences and answer simple questions about them. </p>  
+<p>The HIT should take approximately 7 minutes. Please pay close attention!</p>    
+<br><br>
+<button type='button' id='gotoInstructions'>Proceed to instructions</button>
+</div>
+
+<div class='slide' id='instructions'>
+<br>
+<h3>Instructions</h3>
+<p>In this experiment you will see 16 short sets of sentences describing every-day events, objects or people.</p> 
+<p>Your task is to answer a simple question about each of these descriptions by entering a number into the provided textbox. Please read the descriptions carefully.</p>
+    <br>
+    <p>Click the button below to start the experiment.</p>
+<br><br>
+<button type='button' id='startbutton'>Start experiment</button>
+</div>
+
+<div class='slide' id='stage'>
+<p></p>
+<!--<span id='currentStim'>{{{IF YOU SEE THIS SOMETHING IS WRONG!}}}</span>-->
+<p id="context">{{BRIAN DROPPED N MARBLES INTO THE POOL}}</p>
+<p id="cause">{{}}</p>
+<br>
+<p id="question">{{How likely do you think it is that each of the amounts below is how many MARBLES SANK?}}</p>
+<p></p>
+<form id='responseForm'>
+<input type="text" name="response" class='response' value="" id="answer" required/>
+</form>
+<button type='button' id='continue' >Continue</button>
+<span id="itemError" class='error'><br><br>ERROR: You must enter a response.</span>
+
+</form>
+</div>
+
+<div class='slide' id='langInfo'>
+<p>Please enter your native language (the language that was spoken at home when you were a child):</p>
+<input type="text" id="langBox" />
+<br><br>
+<p>Do you have any comments?</p>  
+<!--<input type="text" id="commentBox" />-->
+<form >
+<textarea name="comment"  id="commentBox" rows="10" cols="30">
+</textarea>
+    </form>
+<br><br>
+<button type='button' id='endbutton'>Finish</button>
+<span id="langError" class='error'><br><br>ERROR: Please enter your native language.</span>
+</div>
+
+
+<div class='slide' id='finish'>
+You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+</body>
+</html>
