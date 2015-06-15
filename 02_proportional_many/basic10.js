@@ -21,100 +21,148 @@ function getRandomInt(min, max) {
 
 var items = shuffle([
    {"context": 'There were __ muffins on the kitchen table in Ed\'s flat.', 
-     "high": 'Ed, who is a fat man, ate many __ muffins.', 
-     "low": "Ed, who is a skinny man, ate many __ muffins.",
+     "N_low": '9',
+     "N_high": '12',
+     "high": 'Ed, who arrived feeling hungry, ate many __ muffins.', 
+     "low": "Ed, who arrived feeling full, ate many __ muffins.",
      "question":'How many __ muffins do you think Ed ate?',
-     "topic": 'muffins'},   
-    
-    {"context":'Alex took part in a basketball competition and was allowed __ shots from the three-point line.',
-     "high":'Alex, who is a professional player, made many __ shots.',
-    "low": 'Alex, who is an amateur player, made many __ shots.',
-    "question":'How many __ shots do you think Alex made?',
-    "topic":'basketball'},
-    
-    {"context": "In a garage sale __ books about Victorian poetry were for sale.", 
-     "high":"Robert, who is an intellectual teenager, bought many __ books.",
-     "low": "Robert, who is an uneducated teenager, bought many __ books.",
-     "question":"How many __ books do you think Robert bought?",
-     "topic":"books"},
-   
-    {"context": "Christina blew up __ balloons for Mike\'s birthday.", 
-     "high":"Mike, who is a six year-old, jumped on many __ balloons and popped them.",
-     "low": "Mike, who is a sixty year-old, jumped on many __ balloons and popped them.",
-     "question":"How many __ balloons do you think Mike popped?",
-     "topic":"balloons"},
-     
-    {"context": "There were __ candles on Greg\'s birthday cake.", 
-     "high":"Greg, who is a healthy boy, blew out many __ candles at once",
-     "low": "Greg, who is an asthmatic boy, blew out many __ candles at once.",
-     "question":"How many __ candles do you think Greg blew out?",
-     "topic":"candles"},
+     "event": 'dependent',
+     "topic": 'muffins'}, 
     
     {"context": "Carla won __ vouchers for rollercoaster rides on a fair.", 
+     "N_low": '9',
+     "N_high": '12',
      "high":"Carla, who is an adventurous person, used many __ vouchers.",
      "low": "Carla, who is a fearful person, used many __ vouchers.",
      "question":"How many __ vouchers do you think Carla used?",
+     "event": 'dependent',
      "topic":"vouchers"},
     
-    {"context": "Bruno played __ tennis matches in a tournament.", 
+    {"context": "Bruno played __ tennis matches in a season.", 
+     "N_low": '12',
+     "N_high": '16',
      "high":"Bruno, who is an unathletic player, lost many __ matches.",
      "low": "Bruno, who is a fit player, lost many __ matches.",
      "question":"How many __ matches do you think Bruno lost?",
+     "event": 'dependent',
      "topic":"tennis"},
     
     {"context": "When moving to a new flat, Martha packed __ boxes.", 
+     "N_low": '15',
+     "N_high": '20',
      "high":"Martha, who is a strong woman, carried many __ boxes herself.",
      "low": "Martha, who is a weak woman, carried many __ boxes herself.",
      "question":"How many __boxes do you think Martha carried?",
+     "event": 'dependent',
      "topic":"boxes"},
     
-    {"context": "Melanie had to choose which among __ pairs of shoes to bring on holiday.", 
-     "high":"Melanie, who is a fashion-conscious girl, packed many __ pairs of shoes.",
-     "low": "Melanie, who is an unfashionable girl, packed many __ pairs of shoes.",
+    {"context": "Melanie had to choose which among __ pairs of shoes to bring on holiday.",
+     "N_low": '9',
+     "N_high": '12',
+     "high":"Melanie, who loves fashion, packed many __ pairs of shoes.",
+     "low": "Melanie, who doesn't care about fashion, packed many __ pairs of shoes.",
      "question":"How many __ pairs of shoes do you think Melanie packed?",
+     "event": 'dependent',
      "topic":"shoes"},
         
     {"context": "For a memory test __ three-digit numbers were read out to Chris.", 
+     "N_low": '9',
+     "N_high": '12',
      "high":"Chris, who has a great memory, memorized many __ numbers.",
      "low": "Chris, who has a bad memory, memorized many __ numbers.",
      "question":"How many __ numbers do you think Chris memorized?",
+     "event": 'dependent',
      "topic":"memory"},
-    
-    {"context": "A football coach named Max invited __ boys to come to practice training.", 
-     "high":"Max, who is an easy-going coach, allowed many __ boys to come back in the next week.",
-     "low": "Max, who is a strict coach, allowed many __ boys to come back in the next week.",
-     "question":"How many __ boys do you think were allowed to come back in the next week?",
-     "topic":"training"},
-        
+            
     {"context": "Jim had __ trees in his garden.", 
+     "N_low": '15',
+     "N_high": '20',
      "high":"Jim, who is a strong man, cut down many __ trees.",
      "low": "Jim, who is a weak man, cut down many __ trees.",
      "question":"How many __ trees do you think Jim cut down?",
+     "event": 'dependent',
      "topic":"trees"},
-    
-    {"context": "On a camping trip __ tents had to be put up.", 
+        
+    {"context": "On a camping trip __ tents had to be put up.",
+     "N_low": '15',
+     "N_high": '20',
      "high":"Dave, who is an avid outdoors man, pitched many __ tents.",
      "low": "Dave, who is an urbanite, pitched many __ tents.",
      "question":"How many __ tents do you think Dave pitched?",
+     "event": 'dependent',
      "topic":"tents"},
     
-    {"context": 'For __ home matches of the Dallas Mavericks tickets were still available.',
-    "high":'Thomas, who is a rich teenager, bought tickets for many __ matches.',
-     "low": "Thomas, who is a broke teenager, bought tickets for many __ matches.",
-     "question":'For how many __ matches do you think Thomas bought tickets?',
-    "topic":'tickets'},
-
-    {"context": "A jeweler had __ watches of the model Chronometer in stock. The next day the shop was robbed.", 
-     "high":"The thief stole many __ watches of the model Chronometer, which is an expensive watch.",
-     "low": "The thief stole many __ watches of the model Chronometer, which is a cheap watch.",
-     "question":"How many __ watches of the model Chronometer do you think were stolen?",
-     "topic":"watch"},
+    {"context":'Alex took part in a basketball competition and was allowed __ shots from the three-point line.',
+     "N_low": '9',
+     "N_high": '12',
+     "high":'Alex, who is a professional player, made many __ shots.',
+    "low": 'Alex, who is an amateur player, made many __ shots.',
+    "question":'How many __ shots do you think Alex made?',
+     "event": 'independent',
+    "topic":'basketball'},
+    
+    {"context": "A football coach named Max invited __ boys to come to practice training.", 
+     "N_low": '12',
+     "N_high": '16',
+     "high":"Max, who is an easy-going coach, allowed many __ boys to come back in the next week.",
+     "low": "Max, who is a strict coach, allowed many __ boys to come back in the next week.",
+     "question":"How many __ boys do you think were allowed to come back in the next week?",
+     "event": 'independent',
+     "topic":"training"},
     
     {"context": "Jimmy jumped onto grandma's old slatted bed frame which only had __ slats left.", 
+     "N_low": '18',
+     "N_high": '24',
      "high":"Jimmy, who is a fat boy, broke many __ slats.",
      "low": "Jimmy, who is a skinny boy, broke many __ slats.",
-     "question":"How many __ slats do you think Jimmy?",
-     "topic":""}
+     "question":"How many __ slats do you think Jimmy broke?",
+     "event": 'independent',
+     "topic":"slats"},
+    
+    {"context": "In a music quiz the beginnings of __ pop songs were played.", 
+     "N_low": '9',
+     "N_high": '12',
+     "high":"Heidi, who loves pop songs, recognized many __ songs.",
+     "low": "Heidi, who hates pop songs, recognized many __ songs.",
+     "question":"How many __ songs do you think Heidi recognized?",
+     "event": 'independent',
+     "topic":"songs"},
+    
+    {"context": "__ people attended the late-night performance in a small cinema.", 
+     "N_low": '30',
+     "N_high": '40',
+     "high":"At the end of the movie, which was very boring, many __ people had fallen asleep.",
+     "low": "At the end of the movie, which was very exciting, many __ people had fallen asleep.",
+     "question":"How many __ people do you think fell asleep?",
+     "event": 'independent',
+     "topic":"cinema"},
+    
+    {"context": "Walter is a door-to-door salesman. Yesterday he presented a vacuum cleaner in __ households.", 
+     "N_low": '18',
+     "N_high": '24',
+     "high":"Walter, who offered his product at a low price, sold a vacuum cleaner to many __ households.",
+     "low": "Walter, who offered his product at a high price, sold a vacuum cleaner to many __ households.",
+     "question":"To how many __ households do you think Walter sold a vacuum cleaner?",
+     "event": 'independent',
+     "topic":"vacuum_cleaner"},
+    
+    {"context": "Deborah bought __ tickets in a raffle.", 
+     "N_low": '9',
+     "N_high": '12',
+     "high":"Many __ tickets bought by Deborah, who is always lucky, were winning tickets.",
+     "low": "Many __ tickets bought by Deborah, who is never lucky, were winning tickets.",
+     "question":"How many __ tickets that Deborah bought do you think were winning tickets?",
+     "event": 'independent',
+     "topic":"raffle"},
+    
+    {"context": "A math teacher presented a tricky problem to the __ students in his course.", 
+     "N_low": '18',
+     "N_high": '24',
+     "high":"Many __ students in his course, who all got good grades in the last test, could solve the problem.",
+     "low": "Many __ students in his course, who all got bad grades in the last test, could solve the problem.",
+     "question":"How many __ students do you think could solve the problem?",
+     "event": 'independent',
+     "topic":"math"},
     
 ]);
 
@@ -172,14 +220,17 @@ function stepExperiment () {
             trialnum: trialnum
         };
     
-        var random_numb = getRandomInt(8,15); //8 included, 15 excluded
-        trialdata.amount = random_numb;
         var part = partitive
         trialdata.partitive = part;
      
         var item = items.shift();
         //trialdata.item = item
-        //get level
+        //get number in context
+        var number = shuffle(["N_low", "N_high"])[0]; //randomly decide whether low or high number in context, vector count starts with 0
+        trialdata.number = number;
+        var amount = item[number];
+        trialdata.amount = amount;
+         //get level
         var level = shuffle(["low", "high"])[0]; //randomly decide whether low or high probability, vector count starts with 0
         trialdata.level = level;
         
@@ -199,9 +250,11 @@ function stepExperiment () {
         var end_quest = quest_elements.length > 1 ? quest_elements[1] : "";
         var topic = item.topic; //save topic of sentence for easier data evaluation
             trialdata.topic = topic;
+        var event = item.event; //save topic of sentence for easier data evaluation
+            trialdata.event = event;
             
             //trialdata.stimulus = begin +" "+random_numb+" " + end + stim + quest; 
-        trialdata.context = beginning_context +" "+random_numb+" " + end_context;
+        trialdata.context = beginning_context +" "+amount+" " + end_context;
 
            if (part == 0){
         trialdata.cause = beginning_stim + " " + end_stim;
@@ -218,6 +271,7 @@ function stepExperiment () {
         //$('#currentStim').html(trialdata.stimulus);
             // then, write it into 'currentStim' HTML placeholder
         $('#itemError').hide();
+        $('#item_number').html(trialdata.trialnum);
         showSlide('stage'); 
             // reveal the result to participant
         //block enter eky
