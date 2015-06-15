@@ -38,7 +38,7 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"vouchers"},
     
-    {"context": "Bruno played __ tennis matches in a season.", 
+    {"context": "Bruno played __ tennis matches last season.", 
      "N_low": '12',
      "N_high": '16',
      "high":"Bruno, who is an unathletic person, lost many __ matches.",
