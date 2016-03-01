@@ -103,8 +103,8 @@ var items = shuffle([
      "noun_middle": 'bottle of wine',    
      "noun_high": 'pair of running shoes',
      "comparedto":'Compared to Martha__, Emily__ was expensive.',
-    "plausLow": 'Is it plausible that __$ is the prize of a __?',
-     "plausHigh": 'Is it plausible that __$ is the prize of a __?',
+    "plausLow": 'Is it plausible that __$ is the price of a __?',
+     "plausHigh": 'Is it plausible that __$ is the price of a __?',
     "predicate": 'expensive',
      "topic": 'cost'}, 
     
