@@ -18,9 +18,9 @@ function getRandomInt(min, max) {
 //var numb = shuffle([10, 11, 12, 14, 10, 11, 12, 14, 10, 11, 12, 14,10, 11, 12, 14]); //must equal number of items!!
 
 var items = shuffle([
-   {"prior_low": 'Harry and Joe are men from the US. Yesterday, Harry ate __ burgers and Chris ate __ burgers.',
-     "prior_middle": 'Harry and Joe are men from the US. Yesterday, Harry ate __ M&Ms and Chris ate __ M&Ms.',
-     "prior_high": 'Harry and Joe are men from the US. Yesterday, Harry ate __ cornflakes and Chris ate __ cornflakes.',
+   {"prior_low": 'Harry and Joe are men from the US. Yesterday, Harry ate __ burgers and Joe ate __ burgers.',
+     "prior_middle": 'Harry and Joe are men from the US. Yesterday, Harry ate __ M&Ms and Joe ate __ M&Ms.',
+     "prior_high": 'Harry and Joe are men from the US. Yesterday, Harry ate __ cornflakes and Joe ate __ cornflakes.',
      "N_low": ['5', '8'],
      "N_high": ['12', '15'],
      "N_Weber": ['12', '19'],
