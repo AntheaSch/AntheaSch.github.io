@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>language experiment</title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="mmturkey.0.5.js"></script> 
+<script type="text/javascript" src="priorManski_pilot.js"></script>
+<link rel="stylesheet" href="basic.css"></link>
+</head>
+<body>
+
+<div class='slide' id='intro'>
+<br>
+    <p>Welcome! </p>
+<br>
+    <p>By participating in this experiment you will help us understand how human language works!</p>
+<p>You will read 6 short sentences and answer simple questions about them. </p>  
+<p>The HIT should take approximately 5 minutes. Please pay close attention!</p>    
+<br><br>
+<button type='button' id='gotoInstructions'>Proceed to instructions</button>
+</div>
+
+<div class='slide' id='instructions'>
+<br>
+<h3>Instructions</h3>
+    <p>You will be shown 6 sentences which introduce some character and some common activity or object that involves a quantity of some sort. We are interested in your intuitive estimate of that quantity.  </p>
+    <p>We ask for your best guess, a minimum, and a maximum amount that you consider plausible.  </p> 
+<!--
+    <p>We are interested in your intuitive judgment about a sentence describing the introduced situation. </p> 
+    <p><b> Please indicate whether the given sentence is an appropriate description of the background information. Please choose a number on a scale from 1 to 7.</b>  </p> 
+<p>
+1 means that the description does not fit at all, 7 means that the description perfectly matches the context.</p> 
+<br>
+-->
+    <p>Additionally, we ask you to judge how likely you think it is that the quantity is lower than a certain number. Please answer these questions by giving percent chances, that means positive, whole numbers between 0 and 100. <b> </p> 
+    <p>Please answer the questions by typing NUMBERS into the text boxes.</b> 
+</p> 
+<br>
+<p>Please read every sentence carefully.</p>
+    <br>
+    <p>Click the button below to start the experiment.</p>
+<br><br>
+<button type='button' id='startbutton'>Start experiment</button>
+</div>
+
+<div class='slide' id='stage'>
+    <p></p>
+    <!--<span id='currentStim'>{{{IF YOU SEE THIS SOMETHING IS WRONG!}}}</span>-->
+    <p id="context">{{BRIAN DROPPED N MARBLES INTO THE POOL}}</p>
+    <p id="cause">{{}}</p>
+    <br>
+     <p id="Qlike">
+    <form  style="margin: 0; padding: 0;" id='likelyform'>
+        <span id = "Qlike1">{{}} </span> 
+        <input type="text" style="display: inline;" name="likely" class='response' value="" id="likely" required/>
+        <span id = "Qlike2">{{}} </span> 
+    </form> 
+    </p>
+    <br>
+     <form style="margin: 0; padding: 0;" id='minform'>
+        <span id = "Qmin1">{{}}</span>
+        <input type="text" name="minimum" class='response' value="" id="minimum" required/>
+        <span id = "Qmin2">{{}}</span>
+    </form>
+    <br>
+    <p id="Qmax">
+    <form style="margin: 0; padding: 0;" id='maxform'>
+        <span id = "Qmax1">{{}}</span>
+        <input type="text" name="maximum" class='response' value="" id="maximum" required/>
+        <span id = "Qmax2">{{}}</span>
+    </form>
+    </p>
+    <!--  <p>What is the most likely number?</p>
+    <p></p>
+    <form id='likelyform'>
+    <input type="text" name="likely" class='response' value="" id="likely" required/>
+    </form>
+     <br>  
+    <p>What is the lowest possible number?</p>
+    <p></p>
+    <form id='minform'>
+    <input type="text" name="minimum" class='response' value="" id="minimum" required/>
+    </form>
+     <br>   
+    <p>What is the highest possible number?</p>
+    <p></p>
+    <form id='maxform'>
+    <input type="text" name="maximum" class='response' value="" id="maximum" required/>
+    </form>-->
+     <br>   
+    <button type='button' id='continuehalfway' >Continue</button>
+    <span id="itemError" class='error'><br><br>ERROR: You must enter a number into every textbox and the lowest possible number must be lower than the highest possible number.</span>
+<p>(This is item number <span id="item_number"> CHANGE THIS </span> out of 6)</p>
+</div>    
+
+ <div class='slide' id='chance20'>
+       <p id="question20">{{BRIAN DROPPED N MARBLES INTO THE POOL}}
+         <form id='20form'>
+        <input type="text" name="perc20" class='response' value="" id="perc20" required/>
+        </form>
+   <button type='button' id='continue1' >Continue</button>
+<span id="itemError1" class='error'><br><br>ERROR: You must enter a number between 0 and 100.</span>
+     
+</div>    
+
+ <div class='slide' id='chance40'>
+    <p id="question40">{{BRIAN DROPPED N MARBLES INTO THE POOL}}</p>
+     <form id='40form'>
+    <input type="text" name="perc40" class='response' value="" id="perc40" required/>
+    </form>
+<button type='button' id='continue2' >Continue</button>
+<span id="itemError2" class='error'><br><br>ERROR: You must enter a number between 0 and 100 which is higher than the last one (<span id="20_number"> CHANGE THIS </span>).</span>
+</div>    
+
+ <div class='slide' id='chance60'>
+    <p id="question60">{{BRIAN DROPPED N MARBLES INTO THE POOL}}</p>
+     <form id='60form'>
+    <input type="text" name="perc60" class='response' value="" id="perc60" required/>
+    </form>
+<button type='button' id='continue3' >Continue</button>
+<span id="itemError3" class='error'><br><br>ERROR: You must enter a number between 0 and 100 which is higher than the last one (<span id="40_number"> CHANGE THIS </span>).</span>
+ </div> 
+
+ <div class='slide' id='chance80'>
+    <p id="question80">{{BRIAN DROPPED N MARBLES INTO THE POOL}}</p>
+     <form id='80form'>
+    <input type="text" name="perc80" class='response' value="" id="perc80" required/>
+    </form>
+<button type='button' id='continue4' >Continue</button>
+<span id="itemError4" class='error'><br><br>ERROR: You must enter a number between 0 and 100 which is higher than the last one (<span id="60_number"> CHANGE THIS </span>).</span>
+ </div> 
+
+<div class='slide' id='langInfo'>
+<p>Please enter your native language (the language that was spoken at home when you were a child):</p>
+<input type="text" id="langBox" />
+<br><br>
+<p>Do you have any comments?</p>  
+<!--<input type="text" id="commentBox" />-->
+<form >
+<textarea name="comment"  id="commentBox" rows="10" cols="30">
+</textarea>
+    </form>
+<br><br>
+<button type='button' id='endbutton'>Finish</button>
+<span id="langError" class='error'><br><br>ERROR: Please enter your native language.</span>
+</div>
+
+
+<div class='slide' id='finish'>
+You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+</body>
+</html>
