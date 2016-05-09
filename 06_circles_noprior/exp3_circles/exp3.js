@@ -7,10 +7,8 @@ No info about prior
 */
 
 /*TO DO
-assign range of interesting numbers to each quantifiers. Make sure we get more info on numbers where judgments are not clear/at chance.
-intervals will change depeding on prior
-change one interval randomly
-sample number from interval, assume uniform distribution
+change prior when changing condition: number of blue balls
+change in logging data: prior condition
 */
 
 
@@ -174,7 +172,7 @@ var items = [
         range: [[0,10]],
 	},
     {
-		item: "Some of the circles are white.",
+		item: "There are some circles.",
         correct_answer: "yes",
         filler: "yes",
         range: [[0,10]],
