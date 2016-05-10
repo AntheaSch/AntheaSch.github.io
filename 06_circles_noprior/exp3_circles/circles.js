@@ -7,7 +7,7 @@
 var drawCircles = function(nr_points, nr_white) {
   var RADIUS = 12; //radius of circles
   var WIDTH = 600; //canvas
-  var HEIGHT = 400; //canvas (canvas is area where image is constructed)
+  var HEIGHT = 300; //canvas (canvas is area where image is constructed)
 
   function uniform(a, b) { return ((Math.random() * (b - a)) + a); }
   function fillArray(val, len) { return _.times(len, _.constant(val)); }
