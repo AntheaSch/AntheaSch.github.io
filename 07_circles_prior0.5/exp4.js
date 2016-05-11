@@ -99,7 +99,7 @@ var items = [
 		quantifier: "few",
 		item: "Few of the balls are blue.",
         filler: "no",
-        range: [[0,1],[2,3],[4,4],[5,10]],
+        range: [[1,1],[2,3],[4,5],[6,10]],
 	},
     {
 		quantifier: "lots",
@@ -129,7 +129,7 @@ var items = [
 		quantifier: "few",
 		item: "Few of the balls are blue.",
         filler: "no",
-        range: [[0,1],[2,3],[4,4],[5,10]],
+        range: [[1,1],[2,3],[4,5],[6,10]],
 	},
     {
 		quantifier: "lots",
