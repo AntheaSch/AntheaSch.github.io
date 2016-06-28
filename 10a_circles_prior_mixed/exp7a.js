@@ -335,7 +335,7 @@ slides.quant = slide({
         //console.log("pic id "+ picture);
         $("#"+picture).show();
         $("#name").html(stim.name);
-        $("#pronoun").html(stim.pronoun);
+        $(".pronoun").html(stim.pronoun);
         $("#blue").html(urn);
         var red = 100 - urn;
         $("#red").html(red);
