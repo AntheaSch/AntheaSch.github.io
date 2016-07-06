@@ -1,8 +1,10 @@
 /*
 Experiment on the proportional use of quantifiers in neutral contexts
-Condition 3: 
-Image depicting 10 balls, blue and red
-Distribution of balls: 100 balls, p(blue) = 0.75, draw 20 (10 items+10 fillers)
+Urns with mixed priors, DRAW 20 balls
+When we draw 20 balls, we do NOT present an urn with 90 red balls because here at least 10 blue balls have to be draw. This does not make sense for FEW
+set of probs is different
+We only present 15 items and leave out one filler
+Distribution of balls: 100 balls, p(blue) = 0.25, 0.50, 0.75, draw 20 (8 items+7 fillers)
 Info about prior via picture of urn
 */
 
@@ -187,13 +189,13 @@ var items = [
         color_item: "red",
         range: [1,20],
 	},
-    {
+/*    {
 		quantifier: "impossible",
 		item: "this number of red balls is impossible.",
         filler: "yes",
         color_item: "red",
         range: [1,20],
-	},
+	},*/
     {
 		quantifier: "impossible",
 		item: "this number of blue balls is impossible.",
@@ -223,7 +225,9 @@ var num_blue = 0;
 var probs = _.shuffle([25, 25, 25, 25,  
             50, 50, 50, 50,  
             75, 75, 75, 75,  
-            90, 90, 90, 90]);
+            //90, 90, 90, 90
+            25,50,75,           
+                      ]);
 
 var urn = 0; //to save data in
 
@@ -344,8 +348,19 @@ slides.quant = slide({
         var intBegin= stim.range[0];   //to get more data from unlikely numbers we subdivided the range [0,10]. One interval is drawn randomly and within this range we choose a number from a uniform distribution
         var intEnd = stim.range[1]
         if (stim.filler == "no"){
+            //if urn contains 90 blue balls, only 10 red balls can be drawn, draw 8 not possible
+            /*if (urn == 90 & stim.quantifier=="many"){ 
+                    var list = _.range(10, 19,2)
+                }
+            else{*/
             var list = _.range(intBegin, intEnd+1,2)}
-        else {var list = _.range(intBegin, intEnd+1)} ;
+        //}
+        else { /*if (urn == 90){ 
+                    var list = _.range(10, 20)
+                }
+                else{*/
+                var list = _.range(intBegin, intEnd+1)} ;
+                //}
         console.log(list);
         num_blue = _.sample(list);
         
