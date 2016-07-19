@@ -1,3 +1,7 @@
+/*NOTE: STYLE SHEET CHANGED for this experiment
+change margins of div*/
+
+
 body {
 	margin:0 0 0 0; /*squish slide into mturk window*/
 }
@@ -6,6 +10,15 @@ table {
 	/* center all tables by default */
 	margin: auto;
 }
+
+div {
+     margin-top: 0;
+    margin-bottom: 3em;
+}
+
+/*p {
+   margin: 0.5;
+}*/
 
 /*the experiment happens in "slides"*/
 .slide {

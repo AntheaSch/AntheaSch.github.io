@@ -1,9 +1,10 @@
 /*
-Experiment on the proportional use of quantifiers in neutral contexts
-Condition 3: 
-Image depicting 10 balls, blue and red
-Distribution of balls: 100 balls, p(blue) = 0.75, draw 20 (10 items+10 fillers)
-Info about prior via picture of urn
+Experiment on the influence of COMPARED TP phrases on production of few and many
+two kids draw from urn with same content, p = 0.5 or p = 0.25
+draw 10 balls
+
+NOTE: STYLE SHEET CHANGED
+change margins of div
 */
 
 
@@ -93,42 +94,120 @@ var items = [
     quantifier: "many",
 		item: "Compared to __ drew many blue balls.",
         filler: "no",
-        range1: [1,9],
-        range2: [1,8],
-        range3: [1,7],
-        range4: [1,6],
+        color: "blue",
+        numbers25: [ [2,5], [6,9], [1,3]],
+        numbers50: [ [4,7], [6,9], [1,3]],
+	},
+    {
+    quantifier: "many",
+		item: "Compared to __ drew many blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers25: [ [2,5], [6,9], [1,3]],
+        numbers50: [ [4,7], [6,9], [1,3]],
+	},
+    {
+    quantifier: "many",
+		item: "Compared to __ drew many blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers25: [ [2,5], [6,9], [1,3]],
+        numbers50: [ [4,7], [6,9], [1,3]],
+	},
+    {
+    quantifier: "many",
+		item: "Compared to __ drew many blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers25: [ [2,5], [6,9], [1,3]],
+        numbers50: [ [4,7], [6,9], [1,3]],
 	},
 	{
 		quantifier: "few",
 		item: "Compared to __ drew few blue balls.",
         filler: "no",
-        range1: [1,9],
-        range2: [1,8],
-        range3: [1,7],
-        range4: [1,6],
+        color: "blue",
+        numbers50: [ [5,2], [3,1], [9,6]],
+        numbers25: [ [4,1], [2,1], [9,6]],
+	},
+    {
+		quantifier: "few",
+		item: "Compared to __ drew few blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers50: [ [5,2], [3,1], [9,6]],
+        numbers25: [ [4,1], [2,1], [9,6]],
+	},
+    {
+		quantifier: "few",
+		item: "Compared to __ drew few blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers50: [ [5,2], [3,1], [9,6]],
+        numbers25: [ [4,1], [2,1], [9,6]],
+	},
+    {
+		quantifier: "few",
+		item: "Compared to __ drew few blue balls.",
+        filler: "no",
+        color: "blue",
+        numbers50: [ [5,2], [3,1], [9,6]],
+        numbers25: [ [4,1], [2,1], [9,6]],
 	},
     {
 		quantifier: "surprising",
 		item: "The number of blue balls __ drew is surprising.",
         filler: "yes",
+        color: "blue",
+        range: [1,10],
+	},
+    {
+		quantifier: "surprising",
+		item: "The number of red balls __ drew is surprising.",
+        filler: "yes",
+        color: "red",
         range: [1,10],
 	},
 	{
 		quantifier: "unexpected",
 		item: "The number of blue balls __ drew is unexpected.",
         filler: "yes",
+        color: "blue",
+        range: [1,10],
+	},
+    {
+		quantifier: "unexpected",
+		item: "The number of red balls __ drew is unexpected.",
+        filler: "yes",
+        color: "red",
         range: [1,10],
 	},
 	{
 		quantifier: "expected",
 		item: "The number of blue balls __ drew is expected.",
         filler: "yes",
+        color: "blue",
+        range: [1,10],
+	},
+    {
+		quantifier: "expected",
+		item: "The number of red balls __ drew is expected.",
+        filler: "yes",
+        color: "red",
         range: [1,10],
 	},
     {
 		quantifier: "impossible",
 		item: "The number of blue balls __ drew is impossible.",
         filler: "yes",
+        color: "blue",
+        range: [1,10],
+	},
+    {
+		quantifier: "impossible",
+		item: "The number of red balls __ drew is impossible.",
+        filler: "yes",
+        color: "red",
         range: [1,10],
 	},
 	
@@ -148,15 +227,22 @@ var repXN = function(str, name, k) {
 	return newstr.replace("X", name);
 }
 
+var urn = 0;
 var num_blue = 0;
 var num_blue2 = 0;
-var distance = 0
+var distance = 0;
+var numbers = [[0,0], [0,0], [0,0]];
+var pair = [0,0];
+var filler = "lol";
 
 //vector of same length as items, randomly draw prior=urn content
 var probs = _.shuffle([25, 25, 25, 25,  
             50, 50, 50, 50,  
-            75, 75, 75, 75,  
-            90, 90, 90, 90]);
+            25, 25, 25, 25,  
+            50, 50, 50, 50,  
+            /*75, 75, 75, 75,  
+            90, 90, 90, 90*/
+                      ]);
 
 /*var urn_total = 100; //total number of balls in urn
 var urn_blue = 0; //number of blue balls in urn
@@ -325,25 +411,24 @@ slides.quant = slide({
         //to get more data from unlikely numbers we subdivided the range [0,10]. One interval is drawn randomly and within this range we choose a number from a uniform distribution
     //fillers: both numbers can have any value
         if (stim.filler=="yes"){
-        var intBegin= stim.range[0];   
-        var intEnd = stim.range[1]
-        var uniform = jStat.uniform.sample(intBegin,intEnd);
+        /*var intBegin= stim.range[0];   
+        var intEnd = stim.range[1]*/
+        filler = "yes";
+        var uniform = jStat.uniform.sample(1,10);
         num_blue = Math.round(uniform);
+            console.log("num_blue "+num_blue);  
         $("#uniform_number").html(num_blue);
         //var num_blue = stim.number_blue
         drawCircles(10, 10-num_blue ) //no variant needed
-        var uniform2 = jStat.uniform.sample(intBegin,intEnd);
+        var uniform2 = jStat.uniform.sample(1,10);
         num_blue2 = Math.round(uniform2);
         //var num_blue = stim.number_blue
         drawCircles2(10, 10-num_blue2 ) //no variant needed
         }
-    //target: one number higher than other    
-        else{
-       /* var distance = Math.round(jStat.uniform.sample(1,4));
-           var blub = "range"+distance.toString();
-            console.log(blub);
-        var test = stim.blub;
-             console.log(test);*/
+       //target: one number higher than other   
+       //intended: test several differences at once    
+        /* else{
+    
         var range = _.shuffle([stim.range1, stim.range2, stim.range3, stim.range4])[0];
         var intBegin= range[0];   
         var intEnd = range[1];
@@ -359,7 +444,24 @@ slides.quant = slide({
         } else{
             drawCircles(10, 10-num_blue2);
             drawCircles2(10, 10-num_blue ); //lower number goes with few
-            }
+            } */
+        
+    // FEW MANY    
+    //have several number pairs selected, less flexibility    
+        else{ 
+        filler = "no";    
+        if (urn == 50){
+            numbers = stim.numbers50;
+        }    else {numbers = stim.numbers25};
+            console.log("list of pair "+stim.numbers50);    
+            console.log("one of list of pair "+stim.numbers50[2]);    
+        pair = _.sample(numbers)  ; 
+        console.log("pair "+pair);    
+        num_blue = pair[0];
+        console.log("num_blue "+num_blue);   
+        num_blue2 = pair[1];
+        drawCircles(10, 10-num_blue );
+        drawCircles2(10, 10-num_blue2 ); 
         }
     },
 
@@ -405,6 +507,15 @@ slides.quant = slide({
             _s.this_trial_data["distance"] = distance;
             _s.this_trial_data["blue_balls_1"] = num_blue;
             _s.this_trial_data["blue_balls_2"] = num_blue2;
+    //add experimental condition: relation between numbers and threshold
+        if (filler == "no"){
+            if (pair == numbers[0]){
+                _s.this_trial_data["situation"] = "NOT-QUANT_QUANT";}
+            else if (pair == numbers[1]){
+                _s.this_trial_data["situation"] = "bothQUANT";}
+            else {
+                _s.this_trial_data["situation"] = "bothNOT-QUANT";}
+        }
       //change this!!
             _s.this_trial_data["cond"] = "prior";
 	    	_s.this_trial_data["rt"] = Date.now() - _s.trial_start;
