@@ -125,7 +125,6 @@ var items = [
         "baseline4": "Scot was tall before Mark, that's why their coach preferred Scot.",
         },
 
-/*
         {"label": "mobile phone",
         "context1": "Oliver lost his mobile phone and therefore he had to buy a new one, but he  had  only little money. The new mobile from Samsung cost 100 euro whereas the iPhone cost 150 euro.",
         "comparative1": "The Samsung device was cheaper than the iPhone was, that's why Oliver bought the Samsung device.",
@@ -455,7 +454,7 @@ var items = [
         "baseline3": "Heather was rich before Toby was, that's why she moved to a big flat earlier.",
         "context4": "Heather and Toby developed an app. Both were very successful and sold their product. Heather found a purchaser already two years ago, whereas Toby sold his app last month. Both of them achieved a good price and got a lot of money.",
         "baseline4": "Heather was rich before Toby, that's why she moved to a big flat earlier.",
-        }, */
+        }, 
 ];
 
 console.log("item length "+ items.length);
