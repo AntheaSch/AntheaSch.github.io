@@ -20,8 +20,9 @@ function getRandomInt(min, max) {
 //var numb = shuffle([10, 11, 12, 14, 10, 11, 12, 14, 10, 11, 12, 14,10, 11, 12, 14]); //must equal number of items!!
 
 var items = shuffle([
-   {"context": 'There were 12 muffins on the kitchen table in Ed\'s flat.',
-     "amount": "12",
+   {"context": 'There were __ muffins on the kitchen table in Ed\'s flat.', 
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high": 'Ed, who arrived feeling hungry, ate few __ muffins.', 
      "low": "Ed, who arrived feeling full, ate few __ muffins.",
@@ -29,8 +30,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic": 'muffins'}, 
     
-    {"context": "Carla won 12 vouchers for rollercoaster rides on a fair.", 
-     "amount": '12',
+    {"context": "Carla won __ vouchers for rollercoaster rides on a fair.", 
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high":"Carla, who is an adventurous person, used few __ vouchers.",
      "low": "Carla, who is a fearful person, used few __ vouchers.",
@@ -38,8 +40,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"vouchers"},
     
-    {"context": "Bruno played 12 tennis matches last season.", 
-     "amount": '12',
+    {"context": "Bruno played __ tennis matches last season.", 
+     "N_low": '12',
+     "N_high": '16',
      "quantifier": "few",
      "high":"Bruno, who is an unathletic person, lost few __ matches.",
      "low": "Bruno, who is a fit person, lost few __ matches.",
@@ -47,8 +50,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"tennis"},
     
-    {"context": "When moving to a new flat, Martha packed 15 boxes.", 
-     "amount": "15",
+    {"context": "When moving to a new flat, Martha packed __ boxes.", 
+     "N_low": '15',
+     "N_high": '20',
      "quantifier": "few",
      "high":"Martha, who is a strong woman, carried few __ boxes herself.",
      "low": "Martha, who is a weak woman, carried few __ boxes herself.",
@@ -56,8 +60,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"boxes"},
     
-    {"context": "Melanie had to choose which among 12 pairs of shoes to bring on holiday.",
-     "amount": '12',
+    {"context": "Melanie had to choose which among __ pairs of shoes to bring on holiday.",
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high":"Melanie, who loves fashion, packed few __ pairs of shoes.",
      "low": "Melanie, who doesn't care about fashion, packed few __ pairs of shoes.",
@@ -65,8 +70,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"shoes"},
         
-    {"context": "For a memory test 9 three-digit numbers were read out to Chris.", 
-     "amount": '9',
+    {"context": "For a memory test __ three-digit numbers were read out to Chris.", 
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high":"Chris, who has a great memory, memorized few __ numbers.",
      "low": "Chris, who has a bad memory, memorized few __ numbers.",
@@ -74,8 +80,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"memory"},
             
-    {"context": "Jim had 15 trees in his garden.", 
-     "amount": '15',
+    {"context": "Jim had __ trees in his garden.", 
+     "N_low": '15',
+     "N_high": '20',
      "quantifier": "few",
      "high":"Jim, who is a strong man, cut down few __ trees.",
      "low": "Jim, who is a weak man, cut down few __ trees.",
@@ -83,8 +90,9 @@ var items = shuffle([
      "event": 'dependent',
      "topic":"trees"},
         
-    {"context":'Alex took part in a basketball competition and was allowed 9 shots from the three-point line.',
-     "amount": '9',
+    {"context":'Alex took part in a basketball competition and was allowed __ shots from the three-point line.',
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high":'Alex, who is a professional player, made few __ shots.',
     "low": 'Alex, who is an amateur player, made few __ shots.',
@@ -92,8 +100,9 @@ var items = shuffle([
      "event": 'independent',
     "topic":'basketball'},
     
-    {"context": "In a music quiz the beginnings of 9 pop songs were played.", 
-     "amount": '9',
+    {"context": "In a music quiz the beginnings of __ pop songs were played.", 
+     "N_low": '9',
+     "N_high": '12',
      "quantifier": "few",
      "high":"Heidi, who loves pop songs, recognized few __ songs.",
      "low": "Heidi, who hates pop songs, recognized few __ songs.",
@@ -101,8 +110,9 @@ var items = shuffle([
      "event": 'independent',
      "topic":"songs"},
     
-    {"context": "A math teacher presented a tricky problem to the 24 students in his course.", 
-     "amount": '24',
+    {"context": "A math teacher presented a tricky problem to the __ students in his course.", 
+     "N_low": '18',
+     "N_high": '24',
      "quantifier": "few",
      "high":"Few __ students in his course, which focuses on problem-solving strategies, could solve the problem.",
      "low": "Few __ students in his course, which does not teach problem-solving strategies, could solve the problem.",
@@ -171,10 +181,21 @@ function stepExperiment () {
      
         var item = items.shift();
         //trialdata.item = item
+        //get number
+         var number = shuffle(["N_low", "N_high"])[0]; //randomly decide whether low or high number in context, vector count starts with 0
+        trialdata.number = number;
+        var amount = item[number];
+        trialdata.amount = amount;
+        console.log("number "+ trialdata.number);
+        console.log("amount "+ trialdata.amount);
          //get level
         var level = shuffle(["low", "high"])[0]; //randomly decide whether low or high probability, vector count starts with 0
         trialdata.level = level;
         
+        var context = item.context; 
+        var context_elements = context.split("__"); //split context at __
+        var beginning_context = context_elements[0];
+        var end_context = context_elements.length > 1 ? context_elements[1] : "";
        
         var stim = item[level];
         var stim_elements = stim.split("__"); //split context at __
@@ -191,9 +212,8 @@ function stepExperiment () {
             trialdata.event = event;
             
             //trialdata.stimulus = begin +" "+random_numb+" " + end + stim + quest; 
-        trialdata.context = item.context;
-        trialdata.amount = item.amount;
-
+        trialdata.context = beginning_context +" "+amount+" " + end_context;
+        
            if (part == 0){
         trialdata.cause = beginning_stim + " " + end_stim;
         trialdata.quest = beginning_quest+ " " +end_quest;
@@ -203,20 +223,19 @@ function stepExperiment () {
         trialdata.quest = beginning_quest+ " of the " +end_quest;
         }
         
-        $('#context').html(item.context);
+        $('#context').html(trialdata.context);
         $('#cause').html(trialdata.cause);
         $('#question').html(trialdata.quest);
         //$('#currentStim').html(trialdata.stimulus);
             // then, write it into 'currentStim' HTML placeholder
         $('#itemError').hide();
         $('#item_number').html(trialdata.trialnum);
-        console.log("amount " +item.amount);
         showSlide('stage'); 
             // reveal the result to participant
         //block enter eky
         $('#continue').click(function() {
             response = $('#responseForm').serialize();
-            if (answer.value != "" & answer.value < Number(item.amount)+1) { 
+            if (answer.value != "" & answer.value < Number(amount)+1) { 
                     // check for valid answer, take textbox-id ="answer"
                 $("#continue").unbind('click');
                     // make continue button available for re-use 
