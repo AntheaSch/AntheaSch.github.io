@@ -115,9 +115,9 @@ var items = [
 
 
 {"label": "football",
-"context1": "David and Chris play football in a club. David started to play when he was 5 years old whereas Chris joined the team much later. In thelast training session David performed well, whereas Chrisperformed badly",
+"context1": "David and Chris play football in a club. David started to play when he was 5 years old whereas Chris joined the team much later. In the last training session David performed well, whereas Chris performed badly.",
 "comparative1": "David was better than Chris was, that's why he was allowed to play the match on Sunday.",
- "context2": "David and Chris play football in a club. David started to play when he was 5 years old whereas Chris joined the team much later. In the last training session David performed well, whereas Chrisperformed badly",
+ "context2": "David and Chris play football in a club. David started to play when he was 5 years old whereas Chris joined the team much later. In the last training session David performed well, whereas Chris performed badly.",
  "comparative2": "David was better than Chris, that's why he was able to play the match on Sunday.",
 "context3": "David and Chris play football in a club. David started to play when he was 5 years old whereas Chris joined the team much later. In their last junior year, David already had a lot of experience, whereas Chris was quite inexperienced.",
 "baseline3": "David was good before Chris was, that's why he was able to join the men's team.",
