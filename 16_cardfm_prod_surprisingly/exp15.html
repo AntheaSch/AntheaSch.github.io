@@ -1,0 +1,144 @@
+<html>
+
+<head>
+   <meta charset="UTF-8">
+    <title>Language study</title>
+
+     <!--JS-->
+    
+    <!-- external general utilities -->
+    <script src="js/jquery-1.11.1.min.js "></script>
+    <script src="full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <!-- if you want to draw stuff: -->
+    <!-- <script src="../_shared/js/raphael-min.js"></script> -->
+
+    <!-- cocolab experiment logic -->
+    <script src="js/exp-V2.js"></script>
+    <script src="js/stream-V2.js"></script>
+
+    <!-- cocolab general utilities -->
+    <script src="js/mmturkey-0.6.js"></script>
+    <script src="js/browserCheck.js"></script>
+    <script src="js/utils.js"></script>
+
+    <!-- if you want to draw cute creatures (depends on raphael): -->
+    <!-- <script src="../_shared/js/ecosystem.js"></script> -->
+
+    <!-- experiment specific helper functions -->
+    <!-- <script src="js/local-utils.js"></script> -->
+
+    <!--CSS-->
+    <link href="full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="local-style.css" rel="stylesheet" type="text/css"/>
+    <!-- experiment file -->
+    <script src="exp15.js"></script>
+</head>
+
+<body onload="init();">
+  <noscript>This task requires JavaScript.</noscript>
+
+  <div class="slide" id="i0" >
+    <p id="instruct-text">Thank you very much for participating in our experiment. You will read short sentences and answer simple questions about them. </p>
+    <p>The HIT should take approximately 3 minutes. Please pay close attention!</p>
+    <button id="start_button" type="button">Start Experiment</button>
+      </div>
+
+  <div class="slide" id="instructions">
+      <p> In this experiment you will read a number of sentences which introduce some character and some common activity that involves a quantity of some sort.   </p>
+      <p>We are interested in your intuitive judgment about the sentence in <b>boldface</b> which describes the introduced situation.</p>
+    <p> Please rate whether you think that the sentence is true in the light of the given background information. Please click on "false" or "true". </p>
+    <p> Please read every sentence carefully.</p>
+    <p>Thank you!</p>
+    <button id="start_button" type="button" onclick="_s.button()">Continue</button>
+  </div>
+    
+<div class="slide" id="quant">
+    <div class="subslide" id="rating_task">
+        <h2 ></h2>
+     <p><tag id="context">CONTEXT</tag> </p> 
+   <!--       <button onclick="_s.button()">Continue</button>
+    </div>
+    
+    <div class="subslide" id="rating_task">
+      <img src="" alt="circles" id="circles"></img>-->
+        <h2 ></h2>
+      <h3 id="quantifier_sentence"></h3>
+      <p id="question">Do you think that this sentence is a true description of the situation?</p>
+        <!--<label><input type="radio"  name="response" value="no"/>No</label>
+        <label><input type="radio"  name="response" value="yes"/>Yes</label>-->
+    <form id='responseForm'>
+false
+    <input type="radio" name='response' value="0" id="answer"> 
+    <input type="radio" name='response' value="1" id="answer"> true
+</form>
+      <button onclick="_s.button()">Continue</button>
+      <div class="err" id="quant_err">Please click on one button before continuing.</div>
+    </div>
+</div>
+
+
+  <div class="slide"  id="subj_info">
+    <div class="long_form">
+      <div class="subj_info_title">Additional information</div>
+      <p class="info">Answering these questions is optional, but will help us understand your answers.</p>
+      <p>Did you read the instructions and do you think you did the HIT correctly?</p>
+      <label><input type="radio"  name="assess" value="No"/>No</label>
+      <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
+      <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
+
+      <p>Gender:
+        <select id="gender">
+          <label><option value=""/></label>
+          <label><option value="Male"/>Male</label>
+          <label><option value="Female"/>Female</label>
+          <label><option value="Other"/>Other</label>
+        </select>
+      </p>
+
+      <p>Age: <input type="text" id="age"/></p>
+
+      <p>Level Of Education:
+        <select id="education">
+          <label><option value="-1"/></label>
+          <label><option value="0"/>Some High School</label>
+          <label><option value="1"/>Graduated High School</label>
+          <label><option value="2"/>Some College</label>
+          <label><option value="3"/>Graduated College</label>
+          <label><option value="4"/>Hold a higher degree</label>
+        </select>
+      </p>
+
+      <p>Native Language: <input type="text" id="language"/></p>
+      <label>(the language(s) spoken at home when you were a child)</label>
+
+      <p>Did you enjoy the hit?</p>
+      <select id="enjoyment">
+        <label><option value="-1"></option></label>
+        <label><option value="0">Worse than the Average HIT</option></label>
+        <label><option value="1" >An Average HIT</option></label>
+        <label><option value="2">Better than average HIT</option></label>
+      </select>
+
+      <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/>
+      <button onclick="_s.submit()">Submit</button>
+    </div>
+  </div>
+
+  <div id="thanks" class="slide js" >
+    <p  class="big">Thanks for your Time!</p>
+  </div>
+
+  <div class="progress">
+    <span>Progress:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

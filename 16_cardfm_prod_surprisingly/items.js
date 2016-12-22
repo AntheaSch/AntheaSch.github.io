@@ -1,0 +1,92 @@
+var items = [
+
+{"context": "A friend’s favorite book has been published only recently and has __ pages.",
+"description": "For a recently published book, the book has __ pages.",
+"quant": ["few", "many"],
+"bins": ["0-40", "41-80","81-120","121-160","161-200","201-240","241-280","281-320","321-360","361-400","401-440","441-480","481-520","521-560","560 or more"],
+"label": "book" },
+
+{"context": "Nick is a man from the US who saw __ movies last year.",
+"description": "For a man from the US, Nick saw __ movies last year.",
+"quant": ["few", "many"],
+"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],
+ "label": "movie" },
+
+{"context": "A friend wants to read you her favorite poem which has __ lines.",
+"description": "The poem has __ lines .", 
+"quant": ["few", "many"],
+ "bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],
+ "label": "poem" },
+
+{"context": "Joseph is a man from the US who ate __ burgers last month.",
+"description": "For a man from the US, Joseph ate many burgers last month.", 
+"quant": ["few", "many"],
+ "bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"],
+ "label": "burger" },
+
+{"context": "Melanie is a woman from the US who owns __ pairs of shoes.",
+"description": "For a woman from the US, Melanie owns __ pairs of shoes.", 
+"quant": ["few", "many"],
+ "bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],
+ "label": "shoes" },
+
+{"context": "Vehicle No. 102 is a school bus which has seats for __ passengers.",
+"description": "For a school bus, the bus has seats for __ passengers.", 
+"quant": ["few", "many"],
+ "bins": ["0-4", "5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70 or more"],
+ "label": "bus" },
+
+{"context": "Erin is a first grade student in primary school. There are __ children in Erin’s class.",
+"description": "For a primary school class, there are __ children in Erin’s class .", 
+"quant": ["few", "many"],
+ "bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"], 
+"label": "class" },
+
+{"context": "Betty is a woman from the US who washed her hair __ times last month.",
+"description": "For a woman from the US, Betty washed her hair __ times last month.", 
+"quant": ["few", "many"],
+ "bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"], 
+ "label": "hair" },
+
+{"context": "Lelia is a woman from the US who has __ friends.",
+"description": "For a woman from the US, Lelia has __ friends.",
+"quant": ["few", "many"],
+ "bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"],
+ "label": "friends" },
+
+{"context": "Tony is a man from the US who cooked himself __ meals at home last month.",
+"description": "For a man from the US, Tony cooked himself __ meals at home last month.", 
+"quant": ["few", "many"],
+ "bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],
+ "label": "cook" },
+
+{"context": "Liam is a man from the US who has __ T-shirts.",
+"description": "For a man from the US, Liam has __ T-shirts.", 
+"quant": ["few", "many"],
+ "bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],
+ "label": "tshirts" },
+
+{"context": "Judith is a woman from the US who has __ Facebook friends.",
+"description": "For a woman from the US, Judith has __ Facebook friends.", 
+"quant": ["few", "many"],
+ "bins": ["0-69", "70-139","140-209","210-279","280-349","350-419","420-489","490-559","560-629","630-699","700-769","770-839","840-909","910-979","980 or more"],
+ "label": "facebook" },
+
+{"context": "Andy is man from the US who drank __ cups of coffee last week.",
+"description": "For a man from the US, Andy drank __ cups of coffee last week.",
+"quant": ["few", "many"],
+ "bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"], 
+"label": "coffee"}, 
+
+{"context": "Lisa is a woman from the US who made __ phone calls last week.",
+"description": "For a woman from the US, Lisa made __ phone calls last week.",
+"quant": ["few", "many"],
+ "bins": ["0-4", "5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70 or more"],
+ "label": "calls" }, 
+
+{"context": "Sarah is a woman from the US who went to __ restaurants last year.",
+"description": "For a woman from the US, Sarah went to __ restaurants last year.", 
+"quant": ["few", "many"],
+ "bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],
+"label": "restaurants" },
+];
