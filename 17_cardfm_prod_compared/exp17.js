@@ -66,105 +66,105 @@ function IsNumeric(n) {
 var items = [
 
     {"context": "A friend’s favorite book has been published only recently and has __ pages.",
-    "description": "recently published books,__ the book has __ pages.",
+    "description": "a recently published book,__ the book has __ pages.",
     "bins_few": ["0-40", "81-120","161-200","241-280"],
     "bins_many": ["321-360","401-440","481-520","560 or more"],
     /* "bins": ["0-40", "41-80","81-120","121-160","161-200","201-240","241-280","281-320","321-360","361-400","401-440","441-480","481-520","521-560","560 or more"],*/
     "label": "book" },
 
     {"context": "Nick is a man from the US who saw __ movies last year.",
-    "description": "men from the US,__ Nick saw __ movies last year.",
+    "description": "a man from the US,__ Nick saw __ movies last year.",
     "bins_few": ["0-2", "6-8","12-14","18-20"],
     "bins_many": ["24-26","30-32","36-38","42 or more"],
     /*"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],*/
      "label": "movie" },
 
     {"context": "A friend wants to read you her favorite poem which has __ lines.",
-    "description": "poems,__ the poem has __ lines.", 
+    "description": "a poem,__ the poem has __ lines.", 
      "bins_few": ["0-3", "8-11","16-19","24-27"],
      "bins_many": ["32-35","40-43","48-51","56 or more"],
      /*"bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],*/
      "label": "poem" },
 
     {"context": "Joseph is a man from the US who ate __ burgers last month.",
-    "description": "men from the US,__ Joseph ate __ burgers last month.", 
+    "description": "a man from the US,__ Joseph ate __ burgers last month.", 
      "bins_few": ["0-1", "4-5","8-9","12-13"],
      "bins_many": ["16-17","20-21","24-25","28 or more"],
      /*"bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"],*/
      "label": "burger" },
 
     {"context": "Melanie is a woman from the US who owns __ pairs of shoes.",
-    "description": "women from the US,__ Melanie owns __ pairs of shoes.", 
+    "description": "a woman from the US,__ Melanie owns __ pairs of shoes.", 
      "bins_few": ["0-2", "6-8","12-14","18-20"],
      "bins_many": ["24-26","30-32","36-38","42 or more"],
     /* "bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],*/
      "label": "shoes" },
 
     {"context": "Vehicle No. 102 is a school bus which has seats for __ passengers.",
-    "description": "school busses,__ the bus has seats for __ passengers.", 
+    "description": "a school bus,__ the bus has seats for __ passengers.", 
      "bins_few": ["0-4", "10-14","20-24","30-34"],
      "bins_many": ["40-44","50-54","60-64","70 or more"],
     /* "bins": ["0-4", "5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70 or more"],*/
      "label": "bus" },
 
     {"context": "Erin is a first grade student in primary school. There are __ children in Erin’s class.",
-    "description": "primary school classes,__ there are __ children in Erin’s class.", 
+    "description": "a primary school class,__ there are __ children in Erin’s class.", 
      "bins_few": ["0-2", "6-8","12-14","18-20"], 
      "bins_many": ["24-26","30-32","36-38","42 or more"], 
      /*"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"], */
     "label": "class" },
 
     {"context": "Betty is a woman from the US who washed her hair __ times last month.",
-    "description": "women from the US,__ Betty washed her hair __ times last month.", 
+    "description": "a woman from the US,__ Betty washed her hair __ times last month.", 
      "bins_few": ["0-2", "6-8","12-14","18-20"], 
      "bins_meny": ["24-26","30-32","36-38","42 or more"], 
      /*"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"], */
      "label": "hair" },
 
     {"context": "Lelia is a woman from the US who has __ friends.",
-    "description": "women from the US,__ Lelia has __ friends.",
+    "description": "a woman from the US,__ Lelia has __ friends.",
      "bins_few": ["0-1","4-5","8-9","12-13"],
      "bins_many": ["16-17","20-21","24-25","28 or more"],
      /*"bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"],*/
      "label": "friends" },
 
     {"context": "Tony is a man from the US who cooked himself __ meals at home last month.",
-    "description": "men from the US,__ Tony cooked himself __ meals at home last month.", 
+    "description": "a man from the US,__ Tony cooked himself __ meals at home last month.", 
      "bins_few": ["0-3", "8-11","16-19","24-27"],
      "bins_many": ["32-35","40-43","48-51","56 or more"],
      /*"bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],*/
      "label": "cook" },
 
     {"context": "Liam is a man from the US who has __ T-shirts.",
-    "description": "men from the US,__ Liam has __ T-shirts.", 
+    "description": "a man from the US,__ Liam has __ T-shirts.", 
      "bins_few": ["0-2", "6-8","12-14","18-20"],
      "bins_many": ["24-26","30-32","36-38","42 or more"],
      /*"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"],*/
      "label": "tshirts" },
 
     {"context": "Judith is a woman from the US who has __ Facebook friends.",
-    "description": "women from the US,__ Judith has __ Facebook friends.", 
+    "description": "a woman from the US,__ Judith has __ Facebook friends.", 
      "bins_few": ["0-69", "140-209","280-349","420-489"],
      "bins_many": ["560-629","700-769","840-909","980 or more"],
 //     "bins": ["0-69", "70-139","140-209","210-279","280-349","350-419","420-489","490-559","560-629","630-699","700-769","770-839","840-909","910-979","980 or more"],
      "label": "facebook" },
 
     {"context": "Andy is man from the US who drank __ cups of coffee last week.",
-    "description": "men from the US,__ Andy drank __ cups of coffee last week.",
+    "description": "a man from the US,__ Andy drank __ cups of coffee last week.",
      "bins_few": ["0-1", "4-5","8-9","12-13"], 
      "bins_many": ["16-17","20-21","24-25","28 or more"], 
      /*"bins": ["0-1", "2-3","4-5","6-7","8-9","10-11","12-13","14-15","16-17","18-19","20-21","22-23","24-25","26-27","28 or more"],*/ 
     "label": "coffee"}, 
 
     {"context": "Lisa is a woman from the US who made __ phone calls last week.",
-    "description": "women from the US,__ Lisa made __ phone calls last week.",
+    "description": "a woman from the US,__ Lisa made __ phone calls last week.",
      "bins_few": ["0-4", "10-14","20-24","30-34"],
      "bins_many": ["40-44","50-54","60-64","70 or more"],
      /*"bins": ["0-4", "5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70 or more"],*/
      "label": "calls" }, 
 
     {"context": "Sarah is a woman from the US who went to __ restaurants last year.",
-    "description": "women from the US,__ Sarah went to __ restaurants last year.", 
+    "description": "a woman from the US,__ Sarah went to __ restaurants last year.", 
      "bins_few": ["0-3", "8-11","16-19","24-27"],
      "bins_many": ["32-35","40-43","48-51","56 or more"],
      /*"bins": ["0-3", "4-7","8-11","12-15","16-19","20-23","24-27","28-31","32-35","36-39","40-43","44-47","48-51","52-55","56 or more"],*/
@@ -293,7 +293,7 @@ slides.quant = slide({
         var quantifier_end = quantifier_elements[2]; 
         /*var quantifier_present1 = "Compared to what you would expect from "+quantifier_begin;
         var quantifier_present2 = quantifier_middle+stim.quantifier+quantifier_end;*/
-        var quantifier_present = "Compared to what you would expect from "+quantifier_begin+ "<br>" +quantifier_middle+stim.quantifier+quantifier_end;
+        var quantifier_present = "Compared to what you would expect for "+quantifier_begin+ "<br>" +quantifier_middle+stim.quantifier+quantifier_end;
         $("#quantifier_sentence").html(quantifier_present);
         $("#quantifier_sentence2").html(quantifier_present2);
         },
