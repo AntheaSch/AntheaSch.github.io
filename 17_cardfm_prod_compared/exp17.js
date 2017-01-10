@@ -117,7 +117,7 @@ var items = [
     {"context": "Betty is a woman from the US who washed her hair __ times last month.",
     "description": "a woman from the US,__ Betty washed her hair __ times last month.", 
      "bins_few": ["0-2", "6-8","12-14","18-20"], 
-     "bins_meny": ["24-26","30-32","36-38","42 or more"], 
+     "bins_many": ["24-26","30-32","36-38","42 or more"], 
      /*"bins": ["0-2", "3-5","6-8","9-11","12-14","15-17","18-20","21-23","24-26","27-29","30-32","33-35","36-38","39-41","42 or more"], */
      "label": "hair" },
 
