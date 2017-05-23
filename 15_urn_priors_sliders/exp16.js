@@ -344,7 +344,7 @@ function make_slides(f) {
 		    	_s.this_trial_data["response"] = _s.current_response_data["bin" + i];
 		    	//_s.this_trial_data["bin"] = _s.this_trial_data.bins[i];
 		    	_s.this_trial_data["rt"] = Date.now() - _s.trial_start;*/
-		    exp.data_trials.push(clone(_s.this_trial_data));
+		    //exp.data_trials.push(clone(_s.this_trial_data));
 		    }
 	    
     	_s.current_response_data = null;
